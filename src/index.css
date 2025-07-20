@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.perspective {
+  perspective: 1200px;
+}
+
+.flip-container {
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-in-out;
+  position: relative;
+}
+
+.group:hover .flip-container {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
