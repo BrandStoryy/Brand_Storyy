@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useState } from "react"; // ← add useState
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import LoadingSpinner from "./Components/LoadingSpinner";
@@ -9,11 +9,14 @@ const LandingPage = lazy(() => import("./Pages/LandingPage"));
 const CommandCenter = lazy(() => import("./Pages/CammandCenter"));
 const PricingTabs = lazy(() => import("./Pages/Pricing"));
 const SetupPage = lazy(() => import("./Pages/Setup"));
+
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // ← create state
+
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
-        <Navbar />
+        <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} /> {/* ← pass state */}
         <div className="flex-grow">
           <Suspense fallback={<LoadingSpinner />}>
             <Routes>

@@ -1,20 +1,23 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Zap, Menu, X } from 'lucide-react';
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = ({ isMenuOpen, setIsMenuOpen }) => {
   const navLinkClass = ({ isActive }) =>
-    isActive ? "text-purple-600 font-semibold" : "text-gray-600 hover:text-purple-600 transition-colors";
+    isActive ? "text-purple-600 font-semibold block py-2" : "text-gray-600 hover:text-purple-600 block py-2 transition-colors";
+
+  // Close menu after clicking a link
+  const handleLinkClick = () => setIsMenuOpen(false);
 
   return (
     <>
-      {/* Navigation */}
+      {/* Navigation Bar */}
       <nav className="bg-white/80 backdrop-blur-lg border-b border-purple-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <motion.div 
+            <motion.div
               className="flex items-center space-x-2"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -38,10 +41,10 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen }) => {
               <NavLink to="/pricing" className={navLinkClass}>Pricing</NavLink>
             </div>
 
-            {/* Buttons */}
+            {/* Desktop Buttons */}
             <div className="hidden md:flex items-center space-x-4">
               <NavLink to="/login" className={navLinkClass}>Sign In</NavLink>
-              <motion.button 
+              <motion.button
                 className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:shadow-lg transition-all"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -50,8 +53,8 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen }) => {
               </motion.button>
             </div>
 
-            {/* Mobile menu toggle */}
-            <button 
+            {/* Mobile Toggle */}
+            <button
               className="md:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
@@ -62,27 +65,27 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen }) => {
       </nav>
 
       {/* Mobile Menu */}
-      {isMenuOpen && (
-        <motion.div 
-          className="md:hidden bg-white border-b border-purple-100"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-        >
-          <div className="px-4 py-2 space-y-2">
-            <NavLink to="/ai-agents" className={navLinkClass}>AI Agents</NavLink>
-            <NavLink to="/dashboard" className={navLinkClass}>Dashboard</NavLink>
-            <NavLink to="/integrations" className={navLinkClass}>Integrations</NavLink>
-            <NavLink to="/pricing" className={navLinkClass}>Pricing</NavLink>
-            <NavLink to="/login" className={navLinkClass}>Sign In</NavLink>
-            <Link to="/signup">
-              <button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-lg font-medium mt-2">
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            className="md:hidden bg-white border-b border-purple-100 px-4 py-4 space-y-2"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+          >
+            <NavLink to="/ai-agents" className={navLinkClass} onClick={handleLinkClick}>AI Agents</NavLink>
+            <NavLink to="/dashboard" className={navLinkClass} onClick={handleLinkClick}>Dashboard</NavLink>
+            <NavLink to="/integrations" className={navLinkClass} onClick={handleLinkClick}>Integrations</NavLink>
+            <NavLink to="/pricing" className={navLinkClass} onClick={handleLinkClick}>Pricing</NavLink>
+            <NavLink to="/login" className={navLinkClass} onClick={handleLinkClick}>Sign In</NavLink>
+            <Link to="/signup" onClick={handleLinkClick}>
+              <button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-lg font-medium">
                 Start Free Trial
               </button>
             </Link>
-          </div>
-        </motion.div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
