@@ -129,7 +129,7 @@ export default function SetupPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-purple-50 to-pink-50 p-4 sm:p-6 lg:p-8 overflow-hidden relative mt-0">
+    <div className="min-h-screen  p-4 sm:p-6 lg:p-8 overflow-hidden relative mt-0">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
