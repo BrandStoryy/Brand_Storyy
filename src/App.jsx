@@ -11,6 +11,7 @@ const LandingPage = lazy(() => import("./Pages/LandingPage"));
 const CommandCenter = lazy(() => import("./Pages/CammandCenter"));
 const PricingTabs = lazy(() => import("./Pages/Pricing"));
 const SetupPage = lazy(() => import("./Pages/Setup"));
+const DynamicPage = lazy(() => import("./Pages/DynamicPage"));
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,6 +32,7 @@ function App() {
                 <Route path="/dashboard" element={<CommandCenter />} />
                 <Route path="/pricing" element={<PricingTabs />} />
                 <Route path="/setup" element={<SetupPage />} />
+                <Route path="/PageDetails" element={<DynamicPage/>} />
               </Routes>
             </Suspense>
           </main>

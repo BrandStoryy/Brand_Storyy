@@ -1,0 +1,392 @@
+{
+  "trendingOccasions": [
+    {
+      "id": 1,
+      "name": "Christmas",
+      "date": "2024-12-25",
+      "time": "10:00 AM",
+      "emoji": "🎄",
+      "color": "from-red-500 to-green-500",
+      "description": "Celebrate the festive season"
+    },
+    {
+      "id": 2,
+      "name": "Diwali",
+      "date": "2024-11-12",
+      "time": "6:00 PM",
+      "emoji": "🪔",
+      "color": "from-orange-500 to-yellow-500",
+      "description": "Festival of lights"
+    },
+    {
+      "id": 3,
+      "name": "Rakshabandhan",
+      "date": "2024-08-19",
+      "time": "11:00 AM",
+      "emoji": "🎁",
+      "color": "from-pink-500 to-purple-500",
+      "description": "Bond of protection"
+    }
+  ],
+  "contentTypes": {
+    "Social Media": {
+      "icon": "📱",
+      "color": "from-purple-500 to-blue-500",
+      "generated": {
+        "facebook": [
+          {
+            "id": 1,
+            "type": "post",
+            "content": "🎄 This Christmas, spread joy and warmth with your loved ones! ✨ Create memories that last a lifetime with our special holiday collection. #Christmas2024 #HolidayJoy #FamilyTime",
+            "image": "https://images.unsplash.com/photo-1512389098783-66b81f86e495?w=500",
+            "likes": 245,
+            "comments": 32,
+            "shares": 18,
+            "timestamp": "2 hours ago"
+          },
+          {
+            "id": 2,
+            "type": "post",
+            "content": "✨ Light up your life this Diwali! 🪔 May the festival of lights bring prosperity, happiness, and endless joy to your home. Share your Diwali moments with us! #Diwali2024 #FestivalOfLights #Celebration",
+            "image": "https://images.unsplash.com/photo-1605538883669-825200433431?w=500",
+            "likes": 189,
+            "comments": 27,
+            "shares": 15,
+            "timestamp": "4 hours ago"
+          },
+          {
+            "id": 3,
+            "type": "post",
+            "content": "👫 Celebrating the beautiful bond between siblings this Rakshabandhan! 🎁 A thread that connects hearts across distances. Tag your sibling and show some love! #Rakshabandhan2024 #SiblingLove #BondOfProtection",
+            "image": "https://images.unsplash.com/photo-1600298881974-6be191ceeda1?w=500",
+            "likes": 156,
+            "comments": 43,
+            "shares": 12,
+            "timestamp": "6 hours ago"
+          }
+        ],
+        "instagram": [
+          {
+            "id": 1,
+            "type": "post",
+            "content": "Christmas magic is in the air! ✨🎄\n\n#ChristmasVibes #HolidayMagic #ChristmasDecor #FestiveSeason #HolidaySpirit #ChristmasJoy",
+            "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=500",
+            "likes": 1247,
+            "comments": 89,
+            "timestamp": "3 hours ago",
+            "hashtags": ["#ChristmasVibes", "#HolidayMagic", "#ChristmasDecor"]
+          },
+          {
+            "id": 2,
+            "type": "reel",
+            "content": "Diwali prep in full swing! 🪔✨\nFrom decorating diyas to preparing sweets, every moment is special.\n\n#DiwaliPrep #FestivalOfLights #DiwaliFun #IndianFestival #Celebration",
+            "video": "diwali_prep_reel.mp4",
+            "likes": 2156,
+            "comments": 134,
+            "views": "12.5K",
+            "timestamp": "1 hour ago"
+          },
+          {
+            "id": 3,
+            "type": "story",
+            "content": "Rakhi shopping done! 🎁 Can't wait to tie it tomorrow 💕",
+            "image": "https://images.unsplash.com/photo-1623520527569-3a6eed6cc9f7?w=500",
+            "views": 567,
+            "replies": 23,
+            "timestamp": "5 hours ago"
+          }
+        ],
+        "twitter": [
+          {
+            "id": 1,
+            "type": "tweet",
+            "content": "The best part about Christmas isn't the presents under the tree, it's the people around the table. 🎄❤️ #ChristmasWisdom #FamilyTime #HolidayLove",
+            "likes": 456,
+            "retweets": 123,
+            "comments": 67,
+            "timestamp": "2h",
+            "verified": true
+          },
+          {
+            "id": 2,
+            "type": "thread",
+            "content": "Diwali is not just about lights, it's about: \n\n✨ Inner illumination\n🏠 Family gatherings\n🍬 Sweet memories\n🙏 Gratitude\n💝 Sharing joy\n\nWhat does Diwali mean to you? #Diwali2024",
+            "likes": 789,
+            "retweets": 234,
+            "comments": 156,
+            "timestamp": "4h",
+            "isThread": true,
+            "threadCount": 5
+          },
+          {
+            "id": 3,
+            "type": "quote",
+            "content": "Distance means nothing when someone means everything. Happy Rakshabandhan to all siblings out there! 👫💕 #Rakshabandhan #SiblingGoals",
+            "likes": 234,
+            "retweets": 89,
+            "comments": 45,
+            "timestamp": "6h",
+            "quotedTweet": {
+              "user": "@SiblingLoveQuotes",
+              "content": "A sibling is both your mirror and your opposite."
+            }
+          }
+        ]
+      },
+      "preview": {
+        "facebook": [
+          {
+            "id": 1,
+            "mockup": {
+              "profileName": "Your Brand",
+              "profileImage": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100",
+              "postTime": "Just now",
+              "postContent": "🎄 This Christmas, spread joy and warmth with your loved ones! ✨ Create memories that last a lifetime with our special holiday collection. #Christmas2024 #HolidayJoy #FamilyTime",
+              "postImage": "https://images.unsplash.com/photo-1512389098783-66b81f86e495?w=600",
+              "engagement": {
+                "likes": 0,
+                "comments": 0,
+                "shares": 0
+              }
+            }
+          }
+        ],
+        "instagram": [
+          {
+            "id": 1,
+            "mockup": {
+              "profileName": "yourbrand",
+              "profileImage": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100",
+              "isVerified": true,
+              "postImage": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=600",
+              "caption": "Christmas magic is in the air! ✨🎄\n\n#ChristmasVibes #HolidayMagic #ChristmasDecor #FestiveSeason #HolidaySpirit #ChristmasJoy",
+              "timestamp": "Just now"
+            }
+          }
+        ],
+        "twitter": [
+          {
+            "id": 1,
+            "mockup": {
+              "profileName": "Your Brand",
+              "username": "@yourbrand",
+              "profileImage": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100",
+              "isVerified": true,
+              "tweetContent": "The best part about Christmas isn't the presents under the tree, it's the people around the table. 🎄❤️ #ChristmasWisdom #FamilyTime #HolidayLove",
+              "timestamp": "now",
+              "engagement": {
+                "replies": 0,
+                "retweets": 0,
+                "likes": 0
+              }
+            }
+          }
+        ]
+      }
+    },
+    "Email Marketing": {
+      "icon": "📧",
+      "color": "from-green-500 to-teal-500",
+      "generated": {
+        "newsletters": [
+          {
+            "id": 1,
+            "subject": "🎄 Christmas Sale: Up to 70% Off Everything!",
+            "preheader": "Don't miss our biggest holiday sale of the year",
+            "sender": "Your Store <no-reply@yourstore.com>",
+            "content": {
+              "header": "Merry Christmas from Our Family to Yours!",
+              "mainText": "Get ready for the most wonderful time of the year with our exclusive Christmas collection.",
+              "cta": {
+                "text": "Shop Christmas Sale",
+                "color": "#dc2626"
+              },
+              "footer": "Valid until December 31st, 2024"
+            },
+            "stats": {
+              "openRate": "0%",
+              "clickRate": "0%",
+              "deliveryRate": "0%"
+            }
+          },
+          {
+            "id": 2,
+            "subject": "✨ Illuminate Your Diwali with 50% OFF",
+            "preheader": "Light up your celebrations with our festive collection",
+            "sender": "Festive Store <offers@festivestore.com>",
+            "content": {
+              "header": "Happy Diwali! Let the Festivities Begin",
+              "mainText": "May this Diwali bring prosperity, happiness, and endless joy to your home. Celebrate the festival of lights with our curated collection of traditional and modern items.",
+              "cta": {
+                "text": "Explore Diwali Collection",
+                "color": "#f59e0b"
+              },
+              "footer": "Offer valid for limited time"
+            },
+            "stats": {
+              "openRate": "0%",
+              "clickRate": "0%",
+              "deliveryRate": "0%"
+            }
+          }
+        ]
+      },
+      "preview": {
+        "newsletters": [
+          {
+            "id": 1,
+            "mockup": {
+              "from": "Your Store <no-reply@yourstore.com>",
+              "to": "customer@email.com",
+              "subject": "🎄 Christmas Sale: Up to 70% Off Everything!",
+              "htmlContent": "<div style='font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;'><header style='background: linear-gradient(135deg, #dc2626, #059669); color: white; padding: 20px; text-align: center;'><h1>🎄 Merry Christmas!</h1></header><div style='padding: 30px 20px;'><h2>Up to 70% OFF Everything!</h2><p>Get ready for the most wonderful time of the year with our exclusive Christmas collection.</p><div style='text-align: center; margin: 30px 0;'><a href='#' style='background: #dc2626; color: white; padding: 12px 30px; text-decoration: none; border-radius: 6px; display: inline-block;'>Shop Christmas Sale</a></div></div></div>"
+            }
+          }
+        ]
+      }
+    },
+    "Ad Copy": {
+      "icon": "🎯",
+      "color": "from-orange-500 to-red-500",
+      "generated": {
+        "googleAds": [
+          {
+            "id": 1,
+            "type": "search",
+            "campaign": "Christmas Sale 2024",
+            "headlines": [
+              "Christmas Sale - Up to 70% Off",
+              "Holiday Deals | Free Shipping",
+              "Christmas Gifts | Shop Now"
+            ],
+            "descriptions": [
+              "Discover amazing Christmas deals on everything you love. Free shipping on orders over $50. Shop now!",
+              "Make this Christmas special with our exclusive collection. Limited time offers available."
+            ],
+            "stats": {
+              "impressions": 0,
+              "clicks": 0,
+              "ctr": "0%"
+            }
+          },
+          {
+            "id": 2,
+            "type": "display",
+            "campaign": "Diwali Festival 2024",
+            "creative": {
+              "headline": "Light Up Your Diwali ✨",
+              "description": "Celebrate the festival of lights with 50% OFF on all traditional items",
+              "image": "https://images.unsplash.com/photo-1605538883669-825200433431?w=400",
+              "cta": "Shop Diwali Collection"
+            },
+            "stats": {
+              "impressions": 0,
+              "clicks": 0,
+              "ctr": "0%"
+            }
+          }
+        ],
+        "facebookAds": [
+          {
+            "id": 1,
+            "type": "feed",
+            "campaign": "Christmas Shopping Campaign",
+            "creative": {
+              "primaryText": "Make this Christmas unforgettable! 🎄✨ Discover our exclusive holiday collection with up to 70% off everything.",
+              "headline": "Christmas Sale - Up to 70% Off",
+              "description": "Shop now and get free shipping on orders over $50",
+              "image": "https://images.unsplash.com/photo-1512389098783-66b81f86e495?w=400",
+              "cta": "Shop Now"
+            },
+            "stats": {
+              "reach": 0,
+              "impressions": 0,
+              "clicks": 0
+            }
+          },
+          {
+            "id": 2,
+            "type": "stories",
+            "campaign": "Diwali Celebration",
+            "creative": {
+              "image": "https://images.unsplash.com/photo-1605538883669-825200433431?w=400",
+              "text": "Celebrate Diwali in Style! ✨🪔",
+              "cta": "Learn More"
+            },
+            "stats": {
+              "reach": 0,
+              "impressions": 0,
+              "clicks": 0
+            }
+          }
+        ]
+      },
+      "preview": {
+        "googleAds": [
+          {
+            "id": 1,
+            "mockup": {
+              "adLabel": "Ad",
+              "url": "yourstore.com",
+              "breadcrumb": "yourstore.com › christmas-sale",
+              "headline1": "Christmas Sale - Up to 70% Off",
+              "headline2": "Holiday Deals | Free Shipping",
+              "description1": "Discover amazing Christmas deals on everything you love. Free shipping on orders over $50. Shop now!",
+              "sitelinks": ["Christmas Gifts", "Holiday Decor", "Winter Clothing", "Gift Cards"]
+            }
+          }
+        ],
+        "facebookAds": [
+          {
+            "id": 1,
+            "mockup": {
+              "profileName": "Your Store",
+              "profileImage": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100",
+              "isSponsored": true,
+              "primaryText": "Make this Christmas unforgettable! 🎄✨ Discover our exclusive holiday collection with up to 70% off everything.",
+              "image": "https://images.unsplash.com/photo-1512389098783-66b81f86e495?w=500",
+              "headline": "Christmas Sale - Up to 70% Off",
+              "description": "Shop now and get free shipping on orders over $50",
+              "ctaButton": {
+                "text": "Shop Now",
+                "color": "#1877f2"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "aiSuggestions": [
+    {
+      "id": 1,
+      "message": "Want to change any content?",
+      "type": "general",
+      "icon": "💡"
+    },
+    {
+      "id": 2,
+      "message": "I can help improve your headlines!",
+      "type": "headline",
+      "icon": "✨"
+    },
+    {
+      "id": 3,
+      "message": "Need better call-to-actions?",
+      "type": "cta",
+      "icon": "🎯"
+    },
+    {
+      "id": 4,
+      "message": "Want to adjust the tone?",
+      "type": "tone",
+      "icon": "🎭"
+    },
+    {
+      "id": 5,
+      "message": "Should we add more emojis?",
+      "type": "emoji",
+      "icon": "😊"
+    }
+  ]
+}

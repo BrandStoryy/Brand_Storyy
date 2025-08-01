@@ -36,111 +36,130 @@ import {
   Maximize2,
   Minimize2,
 } from "lucide-react";
+import { useNavigate } from 'react-router-dom';
 
 const pendingItems = {
-  "AI Agents": [
+  ALL: [
     {
       type: "Social Media",
       platform: "LinkedIn",
       title: "Product launch announcement",
       color: "bg-blue-500",
-      time: "2 min ago"
+      time: "2 min ago",
     },
     {
       type: "Email",
       platform: "Newsletter",
       title: "Weekly digest - Tech trends",
       color: "bg-purple-500",
-      time: "5 min ago"
+      time: "5 min ago",
     },
     {
       type: "Ad Copy",
       platform: "Google Ads",
       title: "Holiday sale campaign",
       color: "bg-green-500",
-      time: "10 min ago"
-    }
+      time: "10 min ago",
+    },
   ],
-  "Content": [
+  Content: [
     {
       type: "Blog Post",
       platform: "Website",
       title: "AI trends in 2025",
       color: "bg-indigo-500",
-      time: "1 hour ago"
-    }
+      time: "1 hour ago",
+    },
   ],
-  "Campaigns": [
+  Agents: [
+    {
+      type: "Blog Post",
+      platform: "Website",
+      title: "AI trends in 2025",
+      color: "bg-indigo-500",
+      time: "1 hour ago",
+    },
+  ],
+  Campaigns: [
     {
       type: "Marketing",
       platform: "Multi-channel",
       title: "Q1 Product Launch",
       color: "bg-orange-500",
-      time: "3 hours ago"
-    }
+      time: "3 hours ago",
+    },
   ],
-  "Analytics": [
+  Analytics: [
     {
       type: "Report",
       platform: "Dashboard",
       title: "Monthly performance review",
       color: "bg-pink-500",
-      time: "1 day ago"
-    }
-  ]
+      time: "1 day ago",
+    },
+  ],
 };
 
 const recentDeployments = {
-  "AI Agents": [
+  ALL: [
     {
       type: "Social Media",
       platform: "Instagram",
       result: "+12% likes",
       time: "2 hours ago",
-      color: "text-pink-500"
+      color: "text-pink-500",
     },
     {
       type: "Email",
       platform: "Campaign",
       result: "18% open rate",
       time: "1 day ago",
-      color: "text-blue-500"
+      color: "text-blue-500",
     },
     {
       type: "Blog Post",
       platform: "Website",
       result: "1.2k views",
       time: "3 days ago",
-      color: "text-green-500"
-    }
+      color: "text-green-500",
+    },
   ],
-  "Content": [
+  Agents: [
     {
       type: "Article",
       platform: "Medium",
       result: "2.5k reads",
       time: "4 hours ago",
-      color: "text-indigo-500"
-    }
+      color: "text-indigo-500",
+    },
   ],
-  "Campaigns": [
+  Content: [
+    {
+      type: "Article",
+      platform: "Medium",
+      result: "2.5k reads",
+      time: "4 hours ago",
+      color: "text-indigo-500",
+    },
+  ],
+  Campaigns: [
     {
       type: "Ad Campaign",
       platform: "Google Ads",
       result: "3.2% CTR",
       time: "6 hours ago",
-      color: "text-orange-500"
-    }
+      color: "text-orange-500",
+    },
   ],
-  "Analytics": [
+  Analytics: [
     {
       type: "Conversion",
       platform: "Website",
       result: "4.8% rate",
       time: "12 hours ago",
-      color: "text-pink-500"
-    }
-  ]
+      color: "text-pink-500",
+    },
+  ],
 };
 
 // Enhanced StatCard with better animations and mobile design
@@ -179,15 +198,26 @@ const StatCard = ({ title, value, icon: Icon, color, suffix = "" }) => {
       whileHover={{ scale: 1.05, y: -5 }}
       className="relative overflow-hidden"
     >
-      <div className="flex items-center space-x-3 sm:space-x-4 p-4 sm:p-6
+      <div
+        className="flex items-center space-x-3 sm:space-x-4 p-4 sm:p-6
                      bg-white/90 backdrop-blur-xl border border-white/30
                      rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300
-                     hover:border-white/50 group">
-        <div className={`p-3 sm:p-3 rounded-xl bg-gradient-to-br ${color.replace('text-', 'from-')} to-transparent`}>
-          <Icon className={`w-5 h-5 sm:w-6 sm:h-6 ${color} group-hover:scale-110 transition-transform`} />
+                     hover:border-white/50 group"
+      >
+        <div
+          className={`p-3 sm:p-3 rounded-xl bg-gradient-to-br ${color.replace(
+            "text-",
+            "from-"
+          )} to-transparent`}
+        >
+          <Icon
+            className={`w-5 h-5 sm:w-6 sm:h-6 ${color} group-hover:scale-110 transition-transform`}
+          />
         </div>
         <div className="min-w-0 flex-1">
-          <p className="text-xs sm:text-sm text-gray-500 truncate mb-1">{title}</p>
+          <p className="text-xs sm:text-sm text-gray-500 truncate mb-1">
+            {title}
+          </p>
           <p className="text-lg sm:text-2xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors">
             {display}
             {suffix}
@@ -280,7 +310,7 @@ const MobileNav = ({ isOpen, onClose, activeTab, setActiveTab, TABS }) => (
 //             </div>
 //           </div>
 //         </div>
-        
+
 //         <div className="flex items-center space-x-2 sm:space-x-4">
 //           <div className="hidden md:flex items-center space-x-2 bg-gray-100 rounded-full px-4 py-2">
 //             <Search size={16} className="text-gray-400" />
@@ -317,7 +347,7 @@ const AnimatedDots = () => (
           duration: 1.2,
           repeat: Infinity,
           delay,
-          ease: "easeInOut"
+          ease: "easeInOut",
         }}
         className="w-2 h-2 bg-purple-500 rounded-full"
       />
@@ -336,16 +366,19 @@ const LiveIndicator = () => (
   </div>
 );
 
-// Enhanced CreativeTaskPlanner with better mobile UX
+// Enhanced CreativeTaskPlanner with popup selection
 const CreativeTaskPlanner = () => {
   const [activeTab, setActiveTab] = useState(null);
-  const [selectedOption, setSelected] = useState(null);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedItems, setSelectedItems] = useState([]); // New state for multiple selections
+  const [showPopup, setShowPopup] = useState(false); // New state for popup
+  const [popupData, setPopupData] = useState(null); // Store popup content
   const [msg, setMsg] = useState("");
   const [files, setFiles] = useState([]);
   const [images, setImages] = useState([]);
   const [sticky, setSticky] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
-
+ 
   const chatRef = useRef(null);
   const fileInputRef = useRef(null);
   const imageInputRef = useRef(null);
@@ -354,38 +387,164 @@ const CreativeTaskPlanner = () => {
     "Social Media": {
       color: "from-purple-500 to-blue-500",
       options: [
-        "Facebook", "Instagram", "Twitter", "LinkedIn",
-        "Reddit", "TikTok", "YouTube", "Pinterest",
+        "Facebook",
+        "Instagram", 
+        "Twitter",
+        "LinkedIn",
+        "Reddit",
+        "TikTok",
+        "YouTube",
+        "Pinterest",
       ],
     },
     "Email Marketing": {
       color: "from-green-500 to-teal-500",
       options: [
-        "Newsletter", "Welcome Series", "Promotional",
-        "Abandoned Cart", "Re-engagement", "Survey",
+        "Newsletter",
+        "Welcome Series",
+        "Promotional",
+        "Abandoned Cart",
+        "Re-engagement",
+        "Survey",
       ],
     },
     "Ad Copy": {
       color: "from-orange-500 to-red-500",
       options: [
-        "Google Ads", "Facebook Ads", "Instagram Ads",
-        "LinkedIn Ads", "Display Ads", "Video Ads",
+        "Google Ads",
+        "Facebook Ads",
+        "Instagram Ads",
+        "LinkedIn Ads",
+        "Display Ads",
+        "Video Ads",
       ],
     },
     "SEO Content": {
       color: "from-blue-500 to-indigo-500",
       options: [
-        "Blog Posts", "Product Descriptions", "Meta Descriptions",
-        "Landing Pages", "Category Pages",
+        "Blog Posts",
+        "Product Descriptions",
+        "Meta Descriptions",
+        "Landing Pages",
+        "Category Pages",
       ],
     },
     "Website Funnel": {
       color: "from-pink-500 to-purple-500",
       options: [
-        "Landing Page", "Sales Page", "Thank You Page",
-        "Checkout Page", "About Page", "Contact Page",
+        "Landing Page",
+        "Sales Page",
+        "Thank You Page",
+        "Checkout Page",
+        "About Page",
+        "Contact Page",
       ],
     },
+  };
+
+  // Define detailed options for each category
+  const detailedOptions = {
+    "Google Ads": [
+      "Search Ads",
+      "Display Ads",
+      "Shopping Ads",
+      "Video Ads",
+      "App Ads",
+      "Smart Campaigns",
+      "Performance Max",
+      "Local Campaigns"
+    ],
+    "Facebook Ads": [
+      "Photo Ads",
+      "Video Ads",
+      "Carousel Ads",
+      "Collection Ads",
+      "Instant Experience",
+      "Lead Ads",
+      "Dynamic Ads",
+      "Messenger Ads"
+    ],
+    "Instagram Ads": [
+      "Photo Ads",
+      "Video Ads",
+      "Stories Ads",
+      "Reels Ads",
+      "Carousel Ads",
+      "Collection Ads",
+      "Shopping Ads",
+      "IGTV Ads"
+    ],
+    "LinkedIn Ads": [
+      "Sponsored Content",
+      "Message Ads",
+      "Dynamic Ads",
+      "Text Ads",
+      "Video Ads",
+      "Event Ads",
+      "Document Ads",
+      "Conversation Ads"
+    ],
+    "Display Ads": [
+      "Banner Ads",
+      "Rich Media Ads",
+      "Interactive Ads",
+      "Video Display",
+      "Native Ads",
+      "Popup Ads",
+      "Interstitial Ads",
+      "Expandable Ads"
+    ],
+    "Video Ads": [
+      "YouTube Ads",
+      "TikTok Ads",
+      "Facebook Video",
+      "Instagram Video",
+      "LinkedIn Video",
+      "Twitter Video",
+      "Vimeo Ads",
+      "Connected TV"
+    ]
+  };
+
+  // Handle option click - open popup for Ad Copy, direct selection for others
+  const handleOptionClick = (tab, option) => {
+    if (tab === "Ad Copy" && detailedOptions[option]) {
+      setPopupData({
+        title: option,
+        options: detailedOptions[option],
+        category: tab
+      });
+      setShowPopup(true);
+    } else {
+      // Direct selection for other categories
+      const newItem = {
+        id: Date.now() + Math.random(),
+        category: tab,
+        option: option,
+        type: 'single'
+      };
+      setSelectedItems(prev => [...prev, newItem]);
+    }
+    setActiveTab(null);
+  };
+
+  // Handle multiple selection from popup
+  const handlePopupSelection = (selections) => {
+    const newItems = selections.map(selection => ({
+      id: Date.now() + Math.random() + Math.random(),
+      category: popupData.category,
+      option: popupData.title,
+      subOption: selection,
+      type: 'multiple'
+    }));
+    setSelectedItems(prev => [...prev, ...newItems]);
+    setShowPopup(false);
+    setPopupData(null);
+  };
+
+  // Remove selected item
+  const removeSelectedItem = (id) => {
+    setSelectedItems(prev => prev.filter(item => item.id !== id));
   };
 
   const upload = (e, kind) => {
@@ -400,7 +559,7 @@ const CreativeTaskPlanner = () => {
       : setFiles((p) => [...p, ...arr]);
     e.target.value = "";
   };
-  
+
   const remove = (id, kind) =>
     kind === "image"
       ? setImages((p) => p.filter((i) => i.id !== id))
@@ -408,11 +567,16 @@ const CreativeTaskPlanner = () => {
 
   const send = () => {
     if (!msg.trim()) return;
-    console.log({ msg, selectedOption, images, files });
+    console.log({ 
+      msg, 
+      selectedItems, // Updated to include multiple selections
+      images, 
+      files 
+    });
     setMsg("");
     setImages([]);
     setFiles([]);
-    setSelected(null);
+    setSelectedItems([]); // Clear selected items
   };
 
   useEffect(() => {
@@ -434,7 +598,7 @@ const CreativeTaskPlanner = () => {
 
   return (
     <div className="max-w-6xl mx-auto p-3 sm:p-6">
-      {/* Enhanced input with better mobile design */}
+      {/* Enhanced input section - same as before */}
       <div ref={chatRef} className="relative mb-6 sm:mb-8">
         <div className="relative bg-white/95 backdrop-blur-xl border border-gray-200/50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
           <textarea
@@ -451,7 +615,7 @@ const CreativeTaskPlanner = () => {
               }
             }}
             rows={1}
-            style={{ resize: 'none' }}
+            style={{ resize: "none" }}
           />
           <div className="absolute right-3 bottom-3 flex items-center space-x-1 sm:space-x-2">
             <button
@@ -505,12 +669,14 @@ const CreativeTaskPlanner = () => {
         onChange={(e) => upload(e, "image")}
       />
 
-      {/* Enhanced attachments display */}
+      {/* Enhanced attachments display - same as before */}
       {(images.length > 0 || files.length > 0) && (
         <div className="mb-6 space-y-4">
           {images.length > 0 && (
             <div className="bg-purple-50/80 rounded-2xl p-4">
-              <h4 className="text-sm font-medium text-purple-700 mb-3">Images ({images.length})</h4>
+              <h4 className="text-sm font-medium text-purple-700 mb-3">
+                Images ({images.length})
+              </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {images.map((img) => (
                   <Attachment
@@ -527,7 +693,9 @@ const CreativeTaskPlanner = () => {
           )}
           {files.length > 0 && (
             <div className="bg-blue-50/80 rounded-2xl p-4">
-              <h4 className="text-sm font-medium text-blue-700 mb-3">Files ({files.length})</h4>
+              <h4 className="text-sm font-medium text-blue-700 mb-3">
+                Files ({files.length})
+              </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {files.map((file) => (
                   <Attachment
@@ -545,7 +713,7 @@ const CreativeTaskPlanner = () => {
         </div>
       )}
 
-      {/* Enhanced category tabs with better mobile layout */}
+      {/* Enhanced category tabs */}
       <div className="mb-6 sm:mb-8">
         <div className="flex flex-wrap gap-2 sm:gap-3 mb-4">
           {Object.keys(categories).map((tab) => (
@@ -575,7 +743,7 @@ const CreativeTaskPlanner = () => {
           ))}
         </div>
 
-        {/* Enhanced dropdown with animations */}
+        {/* Enhanced dropdown */}
         <AnimatePresence>
           {activeTab && (
             <motion.div
@@ -593,15 +761,15 @@ const CreativeTaskPlanner = () => {
                     transition={{ delay: index * 0.05 }}
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => {
-                      setSelected({ tab: activeTab, option: opt });
-                      setActiveTab(null);
-                    }}
+                    onClick={() => handleOptionClick(activeTab, opt)}
                     className="px-3 sm:px-4 py-2 sm:py-3 bg-white hover:bg-gray-50
                                border border-gray-200 rounded-xl text-xs sm:text-sm
                                transition-all duration-200 hover:shadow-md hover:border-gray-300"
                   >
                     {opt}
+                    {activeTab === "Ad Copy" && detailedOptions[opt] && (
+                      <span className="ml-1 text-xs text-purple-500">+</span>
+                    )}
                   </motion.button>
                 ))}
               </div>
@@ -610,85 +778,169 @@ const CreativeTaskPlanner = () => {
         </AnimatePresence>
       </div>
 
-      {/* Enhanced selected option chip */}
-      <AnimatePresence>
-        {selectedOption && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: -20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8, y: -20 }}
-            className="flex items-center justify-between bg-gradient-to-r from-purple-500/20 to-blue-500/20
-                          border border-purple-500/30 rounded-xl p-3 sm:p-4 mb-4 backdrop-blur-sm"
-          >
-            <div className="flex items-center space-x-3">
-              <div
-                className={`w-3 h-3 rounded-full bg-gradient-to-r ${
-                  categories[selectedOption.tab].color
-                } animate-pulse`}
-              />
-              <span className="font-medium text-sm sm:text-base">
-                {selectedOption.tab} – {selectedOption.option}
-              </span>
-            </div>
-            <button
-              onClick={() => setSelected(null)}
-              className="p-2 rounded-lg transition text-gray-600 hover:bg-white/50"
-            >
-              <X size={14} />
-            </button>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Selected Items Tags */}
+      {selectedItems.length > 0 && (
+        <div className="mb-6">
+          <h4 className="text-sm font-medium text-gray-700 mb-3">
+            Selected ({selectedItems.length})
+          </h4>
+          <div className="flex flex-wrap gap-2">
+            {selectedItems.map((item) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500/10 to-blue-500/10
+                           border border-purple-500/20 rounded-full px-3 py-1 text-sm"
+              >
+                <span className="font-medium">
+                  {item.category}: {item.option}
+                  {item.subOption && ` - ${item.subOption}`}
+                </span>
+                <button
+                  onClick={() => removeSelectedItem(item.id)}
+                  className="text-gray-500 hover:text-red-500 transition"
+                >
+                  <X size={14} />
+                </button>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      )}
 
-      {/* Enhanced sticky bar */}
+      {/* Popup Modal */}
       <AnimatePresence>
-        {sticky && (
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 100, opacity: 0 }}
-            className="fixed bottom-0 left-0 right-0  border-t border-gray-200/50
-                       backdrop-blur-xl z-50 shadow-2xl"
-          >
-            <div className="max-w-6xl mx-auto flex items-center p-3 sm:p-4 space-x-2">
-              <input
-                className="flex-1 bg-white/80 border border-gray-200 rounded-xl
-                           px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base
-                           placeholder-gray-500 focus:ring-2 focus:ring-purple-500/50 focus:outline-none"
-                placeholder="Continue your creative task..."
-                value={msg}
-                onChange={(e) => setMsg(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" && !e.shiftKey) {
-                    e.preventDefault();
-                    send();
-                  }
-                }}
-              />
-              <SideBtn
-                icon={Image}
-                onClick={() => imageInputRef.current?.click()}
-                small
-              />
-              <SideBtn
-                icon={Paperclip}
-                onClick={() => fileInputRef.current?.click()}
-                small
-              />
-              <SideBtn
-                icon={Send}
-                colored
-                disabled={!msg.trim()}
-                onClick={send}
-                small
-              />
-            </div>
-          </motion.div>
+        {showPopup && (
+          <PopupModal
+            data={popupData}
+            onClose={() => {
+              setShowPopup(false);
+              setPopupData(null);
+            }}
+            onSelect={handlePopupSelection}
+          />
         )}
       </AnimatePresence>
     </div>
   );
 };
+
+// Popup Modal Component
+const PopupModal = ({ data, onClose, onSelect }) => {
+  const [selectedOptions, setSelectedOptions] = useState([]);
+
+  const toggleOption = (option) => {
+    setSelectedOptions(prev => 
+      prev.includes(option) 
+        ? prev.filter(o => o !== option)
+        : [...prev, option]
+    );
+  };
+
+  const handleConfirm = () => {
+    if (selectedOptions.length > 0) {
+      onSelect(selectedOptions);
+      setSelectedOptions([]);
+    }
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.9, y: 20 }}
+        className="bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] flex flex-col" // Changed: removed overflow-hidden, added flex flex-col, increased max-h
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Header */}
+        <div className="flex items-center justify-between p-6 border-b border-gray-200 flex-shrink-0"> {/* Added flex-shrink-0 */}
+          <h3 className="text-xl font-semibold text-gray-800">
+            Select {data?.title} Types
+          </h3>
+          <button
+            onClick={onClose}
+            className="p-2 rounded-lg hover:bg-gray-100 transition"
+          >
+            <X size={20} />
+          </button>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 overflow-y-auto flex-1"> {/* Changed: removed max-h, added flex-1 */}
+          <div className="grid grid-cols-1 gap-3">
+            {data?.options.map((option) => (
+              <motion.button
+                key={option}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => toggleOption(option)}
+                className={`flex items-center justify-between p-3 rounded-xl border transition-all duration-200
+                           ${selectedOptions.includes(option)
+                             ? 'bg-gradient-to-r from-purple-500/10 to-blue-500/10 border-purple-500/30'
+                             : 'bg-gray-50 border-gray-200 hover:bg-gray-100'
+                           }`}
+              >
+                <span className="font-medium">{option}</span>
+                <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center
+                               ${selectedOptions.includes(option)
+                                 ? 'border-purple-500 bg-purple-500'
+                                 : 'border-gray-300'
+                               }`}>
+                  {selectedOptions.includes(option) && (
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      className="w-2 h-2 bg-white rounded-full"
+                    />
+                  )}
+                </div>
+              </motion.button>
+            ))}
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div className="flex items-center justify-between p-6 border-t border-gray-200 flex-shrink-0"> {/* Added flex-shrink-0 */}
+          <span className="text-sm text-gray-600">
+            {selectedOptions.length} selected
+          </span>
+          <div className="flex gap-3">
+            <button
+              onClick={onClose}
+              className="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg transition"
+            >
+              Cancel
+            </button>
+            <button
+              onClick={handleConfirm}
+              disabled={selectedOptions.length === 0}
+              className={`px-6 py-2 rounded-lg font-medium transition
+                         ${selectedOptions.length > 0
+                           ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white hover:shadow-lg'
+                           : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                         }`}
+            >
+              Add Selected ({selectedOptions.length})
+            </button>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+};
+
+
+ 
+
 
 // Enhanced Attachment component
 const Attachment = ({ item, icon: Icon, color, onRemove, fmtSize }) => (
@@ -729,7 +981,9 @@ const SideBtn = ({
     whileTap={{ scale: disabled ? 1 : 0.95 }}
     disabled={disabled}
     onClick={onClick}
-    className={`p-${small ? 2 : 3} rounded-xl transition-all duration-200 disabled:cursor-not-allowed
+    className={`p-${
+      small ? 2 : 3
+    } rounded-xl transition-all duration-200 disabled:cursor-not-allowed
                 ${
                   colored
                     ? disabled
@@ -742,11 +996,11 @@ const SideBtn = ({
   </motion.button>
 );
 
-const TABS = ["AI Agents", "Content", "Campaigns", "Analytics"];
+const TABS = ["ALL", "Agents", "Content", "Campaigns", "Analytics"];
 
 // Main CommandCenter component with enhanced features
 const CommandCenter = () => {
-  const [activeTab, setActiveTab] = useState("AI Agents");
+  const [activeTab, setActiveTab] = useState("ALL");
   const [loading, setLoading] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
   const [pageLoaded, setPageLoaded] = useState(false);
@@ -759,6 +1013,7 @@ const CommandCenter = () => {
   });
   const [pageIn, setPageIn] = useState(false);
   const [modalTab, setModalTab] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setLoading(true);
@@ -776,7 +1031,7 @@ const CommandCenter = () => {
   }, []);
 
   const cardData = {
-    "AI Agents": {
+    ALL: {
       icon: Bot,
       color: "from-blue-500 to-purple-600",
       bg: "bg-blue-50",
@@ -793,6 +1048,25 @@ const CommandCenter = () => {
           "Agent training",
         ],
         metrics: { active: 12, completed: 248, pending: 15, efficiency: "94%" },
+      },
+    },
+    Agents: {
+      icon: FileText,
+      color: "from-green-500 to-teal-600",
+      bg: "bg-green-50",
+      hover: "hover:bg-green-100",
+      title: "Content Library",
+      subtitle: "Review and manage content",
+      stats: "89 Items",
+      content: {
+        desc: "Centralized hub for all your AI-generated content.",
+        features: [
+          "Preview & edit",
+          "Multi-channel publish",
+          "Version control",
+          "Collaborative reviews",
+        ],
+        metrics: { total: 89, published: 67, draft: 15, pending: 7 },
       },
     },
     Content: {
@@ -843,7 +1117,12 @@ const CommandCenter = () => {
       stats: "↑ 23.5%",
       content: {
         desc: "Comprehensive analytics and reporting dashboard.",
-        features: ["Real-time metrics", "Custom reports", "Predictive analytics", "Export tools"],
+        features: [
+          "Real-time metrics",
+          "Custom reports",
+          "Predictive analytics",
+          "Export tools",
+        ],
         metrics: {
           impressions: "2.4M",
           engagement: "23.5%",
@@ -871,6 +1150,15 @@ const CommandCenter = () => {
     };
   });
 
+    const handleExternalLinkClick = (item, e) => {
+    e.stopPropagation(); // Prevent card click if you have one
+    
+    // Navigate to PageDetails with the item type as state
+    navigate('/PageDetails', { 
+      state: { contentType: item.type } 
+    });
+  };
+
   const renderCard = (item, index, isPending = true) => (
     <motion.div
       key={`${item.type}-${index}`}
@@ -884,13 +1172,19 @@ const CommandCenter = () => {
     >
       <div className="flex items-center space-x-3 sm:space-x-4 flex-1 min-w-0">
         <div className="flex items-center space-x-2 flex-shrink-0">
-          <div className={`w-3 h-3 ${item.color} rounded-full animate-pulse`}></div>
+          <div
+            className={`w-3 h-3 ${item.color} rounded-full animate-pulse`}
+          ></div>
           {!isPending && <LiveIndicator />}
         </div>
         <div className="flex-1 min-w-0">
           <div className="flex items-center space-x-2 mb-1">
-            <span className="text-sm font-medium text-gray-900 truncate">{item.type}</span>
-            <span className="text-xs text-gray-500 truncate hidden sm:inline">{item.platform}</span>
+            <span className="text-sm font-medium text-gray-900 truncate">
+              {item.type}
+            </span>
+            <span className="text-xs text-gray-500 truncate hidden sm:inline">
+              {item.platform}
+            </span>
           </div>
           <p className="text-sm text-gray-600 group-hover:text-gray-800 transition-colors truncate">
             {isPending ? item.title : item.time}
@@ -900,16 +1194,25 @@ const CommandCenter = () => {
       <div className="flex items-center space-x-1 sm:space-x-2 flex-shrink-0">
         {isPending ? (
           <>
-            <button className="p-2 text-gray-400 hover:text-purple-600 transition-all duration-300 hover:scale-110 rounded-lg hover:bg-purple-50">
+              <motion.button 
+              onClick={(e) => handleExternalLinkClick(item, e)}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className="p-2 text-gray-400 hover:text-purple-600 transition-all duration-300 rounded-lg hover:bg-purple-50"
+            >
               <ExternalLink className="w-4 h-4" />
-            </button>
+            </motion.button>
             <button className="p-2 text-gray-400 hover:text-green-600 transition-all duration-300 hover:scale-110 rounded-lg hover:bg-green-50">
               <CheckCircle2 className="w-4 h-4" />
             </button>
           </>
         ) : (
           <>
-            <span className={`text-sm font-medium ${item.color} hidden sm:inline`}>{item.result}</span>
+            <span
+              className={`text-sm font-medium ${item.color} hidden sm:inline`}
+            >
+              {item.result}
+            </span>
             <button className="p-2 text-gray-400 hover:text-blue-600 transition-all duration-300 hover:scale-110 rounded-lg hover:bg-blue-50">
               <Share2 className="w-4 h-4" />
             </button>
@@ -935,10 +1238,8 @@ const CommandCenter = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50/50 via-white to-blue-50/50">
       {/* Enhanced Header */}
-      
+
       {/* Mobile Navigation */}
-     
-    
 
       {/* Hero Section */}
       <section className="text-center py-8 sm:py-12 px-4">
@@ -957,7 +1258,8 @@ const CommandCenter = () => {
             <AnimatedDots />
           </div>
           <p className="text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Orchestrate your AI agents, manage content creation, and monitor performance from one unified dashboard.
+            Orchestrate your AI agents, manage content creation, and monitor
+            performance from one unified dashboard.
           </p>
         </motion.div>
       </section>
@@ -968,7 +1270,8 @@ const CommandCenter = () => {
       {/* Main Dashboard */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Desktop Tab Navigation */}
-        <div className="hidden lg:flex justify-center gap-4 mb-8">
+        {/* Desktop Tab Navigation */}
+        <div className="hidden lg:flex justify-center gap-4 mb-8 sticky top-16 z-50 bg-white/95 backdrop-blur-sm py-4 -mx-4 px-4">
           {TABS.map((t) => (
             <motion.button
               key={t}
@@ -976,11 +1279,11 @@ const CommandCenter = () => {
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveTab(t)}
               className={`px-6 py-3 rounded-2xl font-medium transition-all duration-300 border-2
-                          ${
-                            activeTab === t
-                              ? "bg-gradient-to-r from-purple-500 to-blue-500 text-white border-transparent shadow-lg"
-                              : "text-gray-600 border-gray-200 hover:bg-white hover:border-gray-300 hover:shadow-md bg-white/80"
-                          }`}
+                  ${
+                    activeTab === t
+                      ? "bg-gradient-to-r from-purple-500 to-blue-500 text-white border-transparent shadow-lg"
+                      : "text-gray-600 border-gray-200 hover:bg-white hover:border-gray-300 hover:shadow-md bg-white/80"
+                  }`}
             >
               {t}
             </motion.button>
@@ -988,7 +1291,7 @@ const CommandCenter = () => {
         </div>
 
         {/* Mobile Tab Navigation */}
-        <div className="lg:hidden mb-6">
+        <div className="lg:hidden mb-6 sticky top-0 z-50 bg-white/95 backdrop-blur-sm py-4 -mx-4 px-4">
           <div className="bg-white/80 rounded-2xl p-2 border border-gray-200">
             <div className="grid grid-cols-2 gap-2">
               {TABS.map((t) => (
@@ -996,11 +1299,11 @@ const CommandCenter = () => {
                   key={t}
                   onClick={() => setActiveTab(t)}
                   className={`px-3 py-2 rounded-xl text-sm font-medium transition-all duration-200
-                              ${
-                                activeTab === t
-                                  ? "bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-md"
-                                  : "text-gray-600 hover:bg-gray-50"
-                              }`}
+                      ${
+                        activeTab === t
+                          ? "bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-md"
+                          : "text-gray-600 hover:bg-gray-50"
+                      }`}
                 >
                   {t}
                 </button>
@@ -1073,8 +1376,10 @@ const CommandCenter = () => {
                                   transition-all duration-300 backdrop-blur-sm group relative overflow-hidden`}
                   >
                     {/* Background gradient overlay */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${c.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
-                    
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${c.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
+                    />
+
                     <div className="relative z-10">
                       <div className="flex justify-between items-start mb-4">
                         <div
@@ -1086,11 +1391,16 @@ const CommandCenter = () => {
                           {c.stats}
                         </span>
                       </div>
-                      <h3 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-purple-600 transition-colors">{c.title}</h3>
+                      <h3 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-purple-600 transition-colors">
+                        {c.title}
+                      </h3>
                       <p className="text-sm text-gray-600 mb-4">{c.subtitle}</p>
                       <div className="flex items-center text-xs sm:text-sm text-gray-500 group-hover:text-purple-600 transition-colors">
                         <span>Click to explore</span>
-                        <ExternalLink size={12} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                        <ExternalLink
+                          size={12}
+                          className="ml-2 group-hover:translate-x-1 transition-transform"
+                        />
                       </div>
                     </div>
                   </motion.div>
@@ -1113,7 +1423,9 @@ const CommandCenter = () => {
               <div className="p-2 bg-orange-100 rounded-xl">
                 <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900">Pending Review</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900">
+                Pending Review
+              </h3>
               <div className="flex-1" />
               <span className="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs font-medium">
                 {pendingItems[activeTab]?.length || 0} items
@@ -1121,8 +1433,11 @@ const CommandCenter = () => {
             </div>
             {isLoading ? (
               <div className="space-y-4 animate-pulse">
-                {[1, 2, 3].map(i => (
-                  <div key={i} className="h-14 sm:h-16 bg-gray-200/60 rounded-2xl"></div>
+                {[1, 2, 3].map((i) => (
+                  <div
+                    key={i}
+                    className="h-14 sm:h-16 bg-gray-200/60 rounded-2xl"
+                  ></div>
                 ))}
               </div>
             ) : pendingItems[activeTab]?.length > 0 ? (
@@ -1147,7 +1462,9 @@ const CommandCenter = () => {
               <div className="p-2 bg-green-100 rounded-xl">
                 <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-500" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900">Recent Deployments</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900">
+                Recent Deployments
+              </h3>
               <Activity className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 animate-pulse" />
               <div className="flex-1" />
               <span className="bg-green-100 text-green-600 px-3 py-1 rounded-full text-xs font-medium">
@@ -1156,8 +1473,11 @@ const CommandCenter = () => {
             </div>
             {isLoading ? (
               <div className="space-y-4 animate-pulse">
-                {[1, 2, 3].map(i => (
-                  <div key={i} className="h-14 sm:h-16 bg-gray-200/60 rounded-2xl"></div>
+                {[1, 2, 3].map((i) => (
+                  <div
+                    key={i}
+                    className="h-14 sm:h-16 bg-gray-200/60 rounded-2xl"
+                  ></div>
                 ))}
               </div>
             ) : recentDeployments[activeTab]?.length > 0 ? (
@@ -1205,8 +1525,12 @@ const CommandCenter = () => {
                           <Icon size={28} className="sm:w-8 sm:h-8" />
                         </div>
                         <div>
-                          <h2 className="text-2xl sm:text-3xl font-bold">{data.title}</h2>
-                          <p className="text-gray-600 text-sm sm:text-base">{data.subtitle}</p>
+                          <h2 className="text-2xl sm:text-3xl font-bold">
+                            {data.title}
+                          </h2>
+                          <p className="text-gray-600 text-sm sm:text-base">
+                            {data.subtitle}
+                          </p>
                         </div>
                       </div>
                       <button
@@ -1217,11 +1541,15 @@ const CommandCenter = () => {
                       </button>
                     </div>
 
-                    <p className="text-gray-700 mb-8 text-sm sm:text-base leading-relaxed">{data.content.desc}</p>
+                    <p className="text-gray-700 mb-8 text-sm sm:text-base leading-relaxed">
+                      {data.content.desc}
+                    </p>
 
                     <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 mb-8">
                       <div>
-                        <h3 className="font-semibold text-lg mb-4">Key Features</h3>
+                        <h3 className="font-semibold text-lg mb-4">
+                          Key Features
+                        </h3>
                         <div className="space-y-3">
                           {data.content.features.map((f, index) => (
                             <motion.div
@@ -1231,7 +1559,10 @@ const CommandCenter = () => {
                               transition={{ delay: index * 0.1 }}
                               className="flex items-center p-3 bg-gray-50/80 rounded-xl hover:bg-gray-100/80 transition-colors"
                             >
-                              <CheckCircle2 size={16} className="text-green-500 mr-3 flex-shrink-0" />
+                              <CheckCircle2
+                                size={16}
+                                className="text-green-500 mr-3 flex-shrink-0"
+                              />
                               <span className="text-sm sm:text-base">{f}</span>
                             </motion.div>
                           ))}
@@ -1239,23 +1570,29 @@ const CommandCenter = () => {
                       </div>
 
                       <div>
-                        <h3 className="font-semibold text-lg mb-4">Performance Metrics</h3>
+                        <h3 className="font-semibold text-lg mb-4">
+                          Performance Metrics
+                        </h3>
                         <div className="grid grid-cols-2 gap-3">
-                          {Object.entries(data.content.metrics).map(([k, v], index) => (
-                            <motion.div
-                              key={k}
-                              initial={{ opacity: 0, y: 20 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ delay: index * 0.1 }}
-                              className="p-4 bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-xl text-center
+                          {Object.entries(data.content.metrics).map(
+                            ([k, v], index) => (
+                              <motion.div
+                                key={k}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.1 }}
+                                className="p-4 bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-xl text-center
                                          hover:shadow-md transition-all duration-200 border border-gray-100/50"
-                            >
-                              <p className="text-xl sm:text-2xl font-bold mb-1 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">{v}</p>
-                              <p className="text-xs sm:text-sm text-gray-600 capitalize font-medium">
-                                {k.replace(/([A-Z])/g, ' $1').trim()}
-                              </p>
-                            </motion.div>
-                          ))}
+                              >
+                                <p className="text-xl sm:text-2xl font-bold mb-1 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                                  {v}
+                                </p>
+                                <p className="text-xs sm:text-sm text-gray-600 capitalize font-medium">
+                                  {k.replace(/([A-Z])/g, " $1").trim()}
+                                </p>
+                              </motion.div>
+                            )
+                          )}
                         </div>
                       </div>
                     </div>
@@ -1298,7 +1635,7 @@ const CommandCenter = () => {
             transform: translateY(0);
           }
         }
-        
+
         @keyframes fadeInUp {
           from {
             opacity: 0;
@@ -1309,7 +1646,7 @@ const CommandCenter = () => {
             transform: translateY(0);
           }
         }
-        
+
         @keyframes fadeInLeft {
           from {
             opacity: 0;
@@ -1320,7 +1657,7 @@ const CommandCenter = () => {
             transform: translateX(0);
           }
         }
-        
+
         @keyframes fadeInRight {
           from {
             opacity: 0;
@@ -1331,7 +1668,7 @@ const CommandCenter = () => {
             transform: translateX(0);
           }
         }
-        
+
         @keyframes fadeIn {
           from {
             opacity: 0;
@@ -1340,7 +1677,7 @@ const CommandCenter = () => {
             opacity: 1;
           }
         }
-        
+
         @keyframes slideInFromBottom {
           from {
             opacity: 0;
@@ -1351,27 +1688,27 @@ const CommandCenter = () => {
             transform: translateY(0);
           }
         }
-        
+
         .animate-fadeInDown {
           animation: fadeInDown 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .animate-fadeInUp {
           animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .animate-fadeInLeft {
           animation: fadeInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .animate-fadeInRight {
           animation: fadeInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .animate-fadeIn {
           animation: fadeIn 0.8s ease-out;
         }
-        
+
         .animate-slideInFromBottom {
           animation: slideInFromBottom 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -1380,16 +1717,16 @@ const CommandCenter = () => {
         ::-webkit-scrollbar {
           width: 6px;
         }
-        
+
         ::-webkit-scrollbar-track {
           background: transparent;
         }
-        
+
         ::-webkit-scrollbar-thumb {
           background: rgba(156, 163, 175, 0.3);
           border-radius: 3px;
         }
-        
+
         ::-webkit-scrollbar-thumb:hover {
           background: rgba(156, 163, 175, 0.5);
         }
